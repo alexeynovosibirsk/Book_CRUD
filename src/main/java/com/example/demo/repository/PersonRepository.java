@@ -1,18 +1,17 @@
 package com.example.demo.repository;
 
 import com.example.demo.entity.Person;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-import java.util.List;
+import java.util.Optional;
 
-@RepositoryRestResource
-public interface PersonRepository extends JpaRepository<Person, Long> {
+//@RepositoryRestResource
+@Repository
+public interface PersonRepository extends CrudRepository<Person, Long> {
 
-    List<Person> findAll();
+    Optional<Person> findPersonById(Long id);
 
-    Person findPersonById(long id);
-
-    Person findPersonByName(String name);
+    Optional<Person> findPersonByName(String name);
 
 }

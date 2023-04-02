@@ -1,11 +1,10 @@
 package com.example.demo.controller;
 
 import com.example.demo.entity.Person;
+import com.example.demo.repository.PersonRepository;
 import com.example.demo.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 public class Controller {
@@ -24,7 +23,7 @@ public class Controller {
     }
 
     @GetMapping("/persons")
-    public List<Person> findAll() {
+    public Iterable<Person> findAll() {
         return personService.findAll();
     }
 
