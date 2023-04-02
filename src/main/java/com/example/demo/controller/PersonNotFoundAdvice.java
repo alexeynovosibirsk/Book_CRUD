@@ -16,4 +16,5 @@ public class PersonNotFoundAdvice {
     String personNotFoundHandler(PersonNotFoundException ex) {
         return ex.getMessage();
     }
+
 }
